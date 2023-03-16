@@ -10,8 +10,7 @@ import useInjectReducer from "src/redux/useInjectReducer";
 import reducersSignup from "./store/reducers";
 import WrapSignup from "./style";
 
-const { REACT_APP_GOOGLE_CLIENT_ID, REACT_APP_FACEBOOK_CLIENT_ID } =
-  process.env;
+
 interface Props {}
 
 // eslint-disable-next-line
@@ -20,7 +19,7 @@ function Signup({}: Props) {
 
   return (
     <ErrorBound>
-      <WrapSignup></WrapSignup>
+      <WrapSignup>Hi</WrapSignup>
     </ErrorBound>
   );
 }

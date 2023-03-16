@@ -1,5 +1,4 @@
-import { useState } from "react";
-
+import React from "react";
 import { GlobalStyle } from "src/styles/global-styles";
 import { ThemeProvider } from "styled-components";
 
@@ -12,11 +11,12 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 // diff import
-import { useSelector } from "react-redux";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import { selectAppStore } from "./store/selecters";
 import { BaseCSS, GridThemeProvider } from "styled-bootstrap-grid";
 import Loading from "src/components/Loading";
+
+import { useSelector } from "react-redux";
 
 import NotFoundPage from "src/components/NotFoundPage";
 import Layout from "../Layout";
@@ -59,31 +59,27 @@ function App() {
   return (
     <GridThemeProvider gridTheme={gridTheme}>
       <ThemeProvider theme={theme}>
-        <Router>
-          <Switch>
-            <Route>
-              <Layout>
-                <Switch>
-                  <Route exact path="/">
-                    <Home />
-                  </Route>
+        <Layout>
+          <Router>
+            <Switch>
+              <Route exact path="/">
+                <Home />
+              </Route>
 
-                  <Route exact path="/signup">
-                    <Signup />
-                  </Route>
+              <Route exact path="/signup">
+                <Signup />
+              </Route>
 
-                  <Route exact path="/login">
-                    <Login />
-                  </Route>
-                </Switch>
-              </Layout>
-            </Route>
+              <Route exact path="/login">
+                <Login />
+              </Route>
 
-            <Route path="*">
-              <NotFoundPage />
-            </Route>
-          </Switch>
-        </Router>
+              <Route path="*">
+                <NotFoundPage />
+              </Route>
+            </Switch>
+          </Router>
+        </Layout>
         {/* // extra config global */}
         <Loading active={loading} />
         <GlobalStyle />

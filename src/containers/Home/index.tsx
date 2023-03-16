@@ -19,7 +19,7 @@ function Home({}: Props) {
 
   return (
     <ErrorBound>
-      <WrapHome>Home</WrapHome>
+      <WrapHome>HomeHomeHomeHomeHomeHomeHomeHomeHome HomeHomeHomeHome</WrapHome>
     </ErrorBound>
   );
 }
