@@ -12,7 +12,10 @@ import Layout from "src/containers/Layout";
 import Login from "src/containers/Login";
 import Signup from "src/containers/Signup";
 
+import Template from "src/containers/Template/store/reducers";
 // [IMPORT NEW CONTAINERSTATE ABOVE] < Needed for generating containers seamlessly
+
+
 
 //pages
 const rootReducer = combineReducers({
@@ -22,7 +25,9 @@ const rootReducer = combineReducers({
   Layout,
   Login,
   Signup,
+  Template,
   // [INSERT NEW REDUCER KEY ABOVE] < Needed for generating containers seamlessly
-});
+
+  });
 
 export default rootReducer;
